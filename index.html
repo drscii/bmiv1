@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+<title>BMI calculator</title>
+</head>
+  <body>
+  <h1 class="h12">BMI CALCULATOR</h1>
+<a href="pappu.html"><h1 class="line">developer details</h1></a>
+  <div class="bm1">
+      <form class="gt" action="" method="post" onsubmit="return false">
+        <table cellspacing="9" cellpadding="10">
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+          <tr>
+            <td colspan="8"><label for="g1">Weight in kgs</label></td>
+            <td><input type="number" name="l1" value="" id="g1" step="any"></td>
+          </tr>
+          <tr>
+            <td  colspan="8"><label for="g2">Height in meters</label></td>
+            <td><input type="number"  name="l2" step="any" value="" id="g2"></td>
+          </tr>
+        </table>
+        <center>
+          <br>
+          <br>
+        <input type="submit" name="" value="Calculate" id="lowr" onclick="bmi()">
+        </center>
+      </form>
+    </div>
+
+    <script type="text/javascript">
+
+      function bmi()
+      {
+        var weight=document.getElementById('g1').value;
+        var height=document.getElementById('g2').value;
+        var bmi1=(weight/(height*height)).toFixed(1);
+          document.getElementById("hi").innerHTML="Your BMI is "+bmi1;
+        if(bmi1<18.5){
+         document.getElementById("we").innerHTML="underweight";
+          var img1=document.getElementById("mi");
+          let hidden = img1.getAttribute("hidden");
+          img1.src="lite.gif";
+          img1.removeAttribute("hidden");
+        }
+     else if(bmi1>=18.5 && bmi1<=24.9)
+    {
+  document.getElementById("we").innerHTML="Ideal";
+   var img1=document.getElementById("mi");
+   let hidden = img1.getAttribute("hidden");
+   img1.src="ideal.gif";
+   img1.removeAttribute("hidden");
+   }
+   else if(bmi1>=25.0 && bmi1<=29.9)
+  {
+document.getElementById("we").innerHTML="OverWeight";
+ var img1=document.getElementById("mi");
+ let hidden = img1.getAttribute("hidden");
+ img1.src="overweight.gif";
+ img1.removeAttribute("hidden");
+ }
+ else if(bmi1>=30.0)
+{
+document.getElementById("we").innerHTML="obese";
+var img1=document.getElementById("mi");
+let hidden = img1.getAttribute("hidden");
+img1.src="obese.gif";
+img1.removeAttribute("hidden");
+}
+}
+    </script>
+    <br>
+    <br>
+    <h1 id="hi"></h1>
+    <br>
+    <h1 id="we"></h1>
+    <div class="img1">
+      <img src="" alt="lite" id="mi" class="lo" hidden>
+    </div>
+
+  </body>
+</html>
